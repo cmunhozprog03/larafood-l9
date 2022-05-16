@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\{
+    DashController,
+    PlanController
+};
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('teste', function(){
-    return 'TESTE ADM';
-});
+Route::get('', [DashController::class, 'index']);
+
+Route::resource('/plans', PlanController::class)->names('plans');
